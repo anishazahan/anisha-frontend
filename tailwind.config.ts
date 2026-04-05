@@ -8,6 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-sf-pro)", "Inter", "system-ui", "sans-serif"],
+      },
+      fontSize: {
+        h1: ["52px", { lineHeight: "115%", fontWeight: "500" }],
+        h2: ["40px", { lineHeight: "115%", fontWeight: "500" }],
+        h3: ["28px", { lineHeight: "115%", fontWeight: "500" }],
+        h4: ["24px", { lineHeight: "135%", fontWeight: "400" }],
+        h5: ["20px", { lineHeight: "135%", fontWeight: "400" }],
+        "body-normal": ["17px", { lineHeight: "135%", fontWeight: "400" }],
+        "body-sm": ["15px", { lineHeight: "135%", fontWeight: "400" }],
+      },
       colors: {
         primary: {
           50: "#E6F0FF",
