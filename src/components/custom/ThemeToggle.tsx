@@ -13,10 +13,10 @@ export function ThemeToggle() {
   if (!mounted) return null;
 
   return (
-    <div className="flex flex-col gap-6 p-10 items-center justify-center bg-neutral-100 rounded-custom">
+    <div className="flex flex-col gap-6 px-4 py-2  items-center justify-center  rounded-custom">
       <div
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        className="relative flex h-[52px] w-[104px] cursor-pointer items-center rounded-full bg-neutral-950 p-1 transition-all duration-300"
+        className="relative flex h-[52px] w-[104px] cursor-pointer items-center rounded-full bg-neutral-900 p-1 transition-all duration-300"
       >
         <div
           className={cn(

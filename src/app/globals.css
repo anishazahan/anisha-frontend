@@ -4,18 +4,36 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #111827; /* neutral-900 */
+    /* Light Mode Variables */
+    --background: 0 0% 100%; /* #ffffff */
+    --foreground: 222.2 84% 4.9%; /* #111827 - neutral-900 */
   }
 
   .dark {
-    --background: #030712; /* neutral-950 */
-    --foreground: #ffffff;
+    /* Dark Mode Variables */
+    --background: 222.2 84% 4.9%; /* #030712 - neutral-950 */
+    --foreground: 0 0% 100%; /* #ffffff */
   }
 }
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  transition: background-color 0.3s ease;
+@layer base {
+  * {
+    @apply border-neutral-200 dark:border-neutral-800;
+  }
+
+  body {
+    /* Use the variables we defined above */
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    @apply antialiased transition-colors duration-300;
+  }
+}
+
+/* Custom Scrollbar (Optional, but looks nice on Mac) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-300 dark:bg-neutral-800 rounded-full;
 }

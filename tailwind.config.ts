@@ -40,6 +40,9 @@ const config: Config = {
           900: "#001133",
           950: "#00081A",
         },
+        text: {
+          sub_heading: "#D0D5D9",
+        },
         neutral: {
           0: "#FFFFFF",
           50: "#F9FAFB",
