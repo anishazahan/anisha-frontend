@@ -8,6 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        mobile: { min: "412px", max: "520px" },
+        "tablet-sm": { min: "521px", max: "680px" },
+        "tablet-lg": { min: "681px", max: "980px" },
+        desktop: { min: "981px" },
+      },
       fontFamily: {
         sans: ["var(--font-sf-pro)", "Inter", "system-ui", "sans-serif"],
       },
