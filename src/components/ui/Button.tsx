@@ -8,14 +8,14 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary: "bg-primary-500 text-white hover:bg-primary-600",
-        secondary: "bg-primary-300 text-white hover:bg-primary-400",
+        secondary: "bg-primary-300 text-white hover:bg-primary-400 dark:bg-primary-500",
 
-        dark: "bg-neutral-900 text-white hover:bg-neutral-800",
-        dark_light: "bg-neutral-800 text-white hover:bg-neutral-700",
-        black: "bg-black text-white",
+        dark: "bg-neutral-900 text-white hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200",
+        dark_light: "bg-neutral-800 text-white hover:bg-neutral-700 dark:bg-neutral-200 dark:text-neutral-900",
+        black: "bg-black text-white dark:bg-white dark:text-black",
 
         outline:
-          "border border-neutral-200 bg-transparent hover:bg-neutral-100 text-neutral-900",
+          "border border-neutral-200 bg-transparent hover:bg-neutral-100 text-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800",
       },
       size: {
         sm: "h-9 px-4 text-body-sm rounded-[8px]",

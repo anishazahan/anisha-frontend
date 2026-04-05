@@ -11,9 +11,10 @@ const playButtonVariants = cva(
     variants: {
       variant: {
         // Light Mode: Yellowish/Primary background with dark icon
-        primary: "bg-primary-500 text-neutral-900 border-neutral-900",
+        primary: "bg-primary-500 text-neutral-900 border-neutral-900 dark:bg-primary-500 dark:text-neutral-900",
         // Dark Mode: Black background with white icon and subtle border
-        dark: "bg-neutral-950 text-white border-neutral-800",
+        dark: "bg-neutral-950 text-white border-neutral-800 dark:bg-white dark:text-neutral-900",
+        white: "bg-white text-primary-500 border-none shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:scale-110 dark:shadow-[0_0_30px_rgba(36,102,242,0.3)]",
       },
       size: {
         sm: "h-10 w-10 rounded-full",
