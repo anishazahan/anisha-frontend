@@ -1,9 +1,11 @@
 import { ThemeToggle } from "@/components/custom/ThemeToggle";
+import Navbar from "@/components/landing/Navbar";
 import { Button } from "@/components/ui/Button";
 
 export default function Home() {
   return (
-    <div className="p-10 grid grid-cols-3 gap-4  rounded-custom">
+    <div className="">
+      <Navbar />
       <div className="flex flex-col items-center gap-4">
         <p className="text-body-sm text-neutral-500 uppercase tracking-widest">
           Switch Theme
