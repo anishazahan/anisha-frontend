@@ -9,8 +9,11 @@ const buttonVariants = cva(
       variant: {
         primary: "bg-primary-500 text-white hover:bg-primary-600",
         secondary: "bg-primary-300 text-white hover:bg-primary-400",
+
         dark: "bg-neutral-900 text-white hover:bg-neutral-800",
         dark_light: "bg-neutral-800 text-white hover:bg-neutral-700",
+        black: "bg-black text-white",
+
         outline:
           "border border-neutral-200 bg-transparent hover:bg-neutral-100 text-neutral-900",
       },
@@ -21,13 +24,19 @@ const buttonVariants = cva(
         pill: "h-11 px-8 rounded-full",
       },
     },
+    compoundVariants: [
+      {
+        size: "pill",
+        variant: ["dark", "dark_light", "black"],
+        className: "text-primary-500",
+      },
+    ],
     defaultVariants: {
       variant: "primary",
       size: "md",
     },
   },
 );
-
 export interface ButtonProps
   extends
     React.ButtonHTMLAttributes<HTMLButtonElement>,
