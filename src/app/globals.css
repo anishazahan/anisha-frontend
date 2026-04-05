@@ -37,3 +37,15 @@
 ::-webkit-scrollbar-thumb {
   @apply bg-neutral-300 dark:bg-neutral-800 rounded-full;
 }
+
+@layer components {
+  /* Play Button - Light Mode */
+  .play-button-glow {
+    box-shadow: 0 0 20px 5px rgba(17, 24, 39, 0.05);
+  }
+
+  /* Play Button  - Dark Mode */
+  .dark .play-button-glow {
+    box-shadow: 0 0 30px 10px rgba(36, 102, 242, 0.2);
+  }
+}
