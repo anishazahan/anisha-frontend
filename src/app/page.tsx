@@ -5,6 +5,7 @@ import Hero from "@/components/landing/Hero";
 import Navbar from "@/components/landing/Navbar";
 import PricingSection from "@/components/landing/PricingSection";
 import SelfPacedSection from "@/components/landing/SelfPacedSection";
+import Testimonials from "@/components/landing/Testimonials";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <SelfPacedSection />
+      <Testimonials />
       <Curriculum />
       <PricingSection />
       <CTASection />
