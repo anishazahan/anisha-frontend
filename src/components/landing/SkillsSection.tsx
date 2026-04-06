@@ -19,7 +19,7 @@ const CARD_IMG_2 = "/images/student2.jpg";
 const CARD_IMG_3 = "/images/student3.jpg";
 const HERO_IMAGE = img1;
 
-const Testimonials = () => {
+const SkillsSection = () => {
   const container = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -274,4 +274,4 @@ const Testimonials = () => {
     </section>
   );
 };
-export default Testimonials;
+export default SkillsSection;

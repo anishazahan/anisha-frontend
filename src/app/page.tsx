@@ -1,11 +1,12 @@
 import CTASection from "@/components/landing/CTASection";
 import Curriculum from "@/components/landing/Curriculum";
+import FocusSection from "@/components/landing/FocusSection";
 import { Footer } from "@/components/landing/Footer";
 import Hero from "@/components/landing/Hero";
 import Navbar from "@/components/landing/Navbar";
 import PricingSection from "@/components/landing/PricingSection";
 import SelfPacedSection from "@/components/landing/SelfPacedSection";
-import Testimonials from "@/components/landing/Testimonials";
+import SkillsSection from "@/components/landing/SkillsSection";
 
 export default function Home() {
   return (
@@ -13,7 +14,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <SelfPacedSection />
-      <Testimonials />
+      <FocusSection />
+      <SkillsSection />
       <Curriculum />
       <PricingSection />
       <CTASection />
