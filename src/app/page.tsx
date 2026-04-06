@@ -7,6 +7,7 @@ import Navbar from "@/components/landing/Navbar";
 import PricingSection from "@/components/landing/PricingSection";
 import SelfPacedSection from "@/components/landing/SelfPacedSection";
 import SkillsSection from "@/components/landing/SkillsSection";
+import TestimonialCarousel from "@/components/landing/TestimonialCarousel";
 
 export default function Home() {
   return (
@@ -17,8 +18,10 @@ export default function Home() {
       <FocusSection />
       <SkillsSection />
       <Curriculum />
+      <TestimonialCarousel />
       <PricingSection />
       <CTASection />
+
       <Footer />
     </div>
   );

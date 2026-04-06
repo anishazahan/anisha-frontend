@@ -17,7 +17,7 @@ export function Footer() {
 
       <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
-          <p className="text-[14px] text-neutral-500 order-2 md:order-1">
+          <p className="test-sm text-neutral-500 order-2 md:order-1">
             © Copyright 2026, All Rights Reserved
           </p>
 
@@ -27,7 +27,7 @@ export function Footer() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-[14px] text-neutral-400 transition-colors hover:text-white"
+                className="test-sm text-neutral-400 transition-colors hover:text-white"
               >
                 {link.name}
               </Link>

@@ -150,7 +150,7 @@ const PricingSection = () => {
                   $500
                 </span>
               </div>
-              <div className="rounded-full bg-primary-500 px-4 py-1 text-[14px] font-bold text-white">
+              <div className="rounded-full bg-primary-500 px-4 py-1 test-sm font-bold text-white">
                 30% off
               </div>
             </div>

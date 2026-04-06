@@ -233,7 +233,7 @@ const SkillsSection = () => {
 
                 {/* Quote */}
                 <div className="quote-block max-w-[230px] sm:max-w-[260px]">
-                  <p className="text-[14px] leading-snug text-neutral-400">
+                  <p className="test-sm leading-snug text-neutral-400">
                     The ability to concentrate deeply is the ultimate
                     productivity hack
                   </p>
