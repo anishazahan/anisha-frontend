@@ -41,6 +41,7 @@ const PricingSection = () => {
 
   return (
     <section
+      id="pricing"
       ref={container}
       className="w-full bg-white py-24 transition-colors duration-300 dark:bg-[#030712]"
     >

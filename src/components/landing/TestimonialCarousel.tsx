@@ -57,7 +57,10 @@ export default function TestimonialCarousel() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   return (
-    <section className="w-full bg-[#030712] py-24 overflow-hidden transition-colors duration-300">
+    <section
+      id="testimonials"
+      className="w-full bg-[#030712] py-24 overflow-hidden transition-colors duration-300"
+    >
       <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
         {/* Header */}
         <div className="mb-20 flex flex-col items-center text-center">

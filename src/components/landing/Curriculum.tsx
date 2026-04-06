@@ -35,6 +35,7 @@ const Curriculum = () => {
 
   return (
     <section
+      id="curriculum"
       ref={container}
       className="w-full  py-24 transition-colors duration-300 bg-[#030712] dark:bg-dark"
     >

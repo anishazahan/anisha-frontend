@@ -11,7 +11,7 @@ export default function Hero() {
 
   return (
     <section
-      id="hero"
+      id="overview"
       className="relative w-full overflow-hidden bg-white pt-72 pb-32 transition-colors duration-300 dark:bg-black"
     >
       {/* --- BACKGROUND LAYERS --- */}
