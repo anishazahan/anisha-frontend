@@ -64,6 +64,9 @@ const config: Config = {
           blue_15: "rgba(36, 102, 242, 0.15)",
           black: "rgba(0, 0, 0, 0.20)",
         },
+        bg: {
+          surface_bg: "#111214",
+        },
         error: {
           500: "#FF1818",
         },
