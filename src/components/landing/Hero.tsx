@@ -13,7 +13,7 @@ export default function Hero() {
   return (
     <section
       id="overview"
-      className="relative w-full overflow-hidden bg-white pt-72 pb-0 transition-colors duration-300 dark:bg-black"
+      className="relative w-full overflow-hidden bg-white pt-44 md:pt-56 lg:pt-72 pb-0 transition-colors duration-300 dark:bg-black"
     >
       {/* ── 2. Blue radial glow — top center ── */}
 
@@ -54,17 +54,9 @@ export default function Hero() {
           </Button>
         </div>
 
-        {/* <div
-          className="pointer-events-none absolute left-1/2 top-[-8%]  hidden h-[500px] w-[900px] -translate-x-1/2 dark:block z-50"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, rgba(37,99,235,0.28) 0%, rgba(37,99,235,0.08) 45%, transparent 70%)",
-          }}
-        /> */}
-
         {/* ── 5. Video Box ── */}
 
-        <div className="relative mx-auto  w-full group mt-2 py-20">
+        <div className="relative mx-auto  w-full group mt-2 pt-10 md:pt-20 ">
           <div className="h-full w-full bg-glow-line-vertical absolute left-0 top-0 bottom-0"></div>
           <div
             className="pointer-events-none absolute left-1/2 top-[-17%] z-[2] hidden h-[500px] w-[900px] -translate-x-1/2 dark:block"
@@ -161,7 +153,7 @@ export default function Hero() {
               )}
             </div>
           </div>
-          <div className="h-20 w-full bg-glow-line-horizontal"></div>
+          <div className="h-10 md:h-20 w-full bg-glow-line-horizontal"></div>
         </div>
         {/* end video box */}
       </div>

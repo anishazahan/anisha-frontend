@@ -3,115 +3,124 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { BadgeCheck, Lightbulb, ShieldAlert, Waypoints } from "lucide-react";
+import { BadgeCheck, Brain, Lightbulb, Waypoints } from "lucide-react";
 import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const timelineData = [
   {
-    icon: <Lightbulb size={24} className="text-neutral-900 dark:text-white" />,
+    icon: <Lightbulb size={24} />,
     text: "Develop laser-sharp focus & eliminate distractions.",
   },
   {
-    icon: <ShieldAlert size={24} className="text-neutral-900 dark:text-white" />,
+    icon: <Brain size={24} />,
     text: "Master deep work techniques for smarter productivity.",
   },
   {
-    icon: <BadgeCheck size={24} className="text-neutral-900 dark:text-white" />,
+    icon: <BadgeCheck size={24} />,
     text: "Overcome procrastination & get more done.",
   },
   {
-    icon: <Waypoints size={24} className="text-neutral-900 dark:text-white" />,
+    icon: <Waypoints size={24} />,
     text: "Build lasting habits for long-term success.",
   },
 ];
 
 export default function SelfPacedSection() {
   const containerRef = useRef<HTMLDivElement>(null);
-  
-  useGSAP(() => {
-    const items = gsap.utils.toArray(".timeline-item");
-    
-    gsap.from(items, {
-      y: 50,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 75%",
-      }
-    });
 
-    gsap.from(".timeline-line", {
-      scaleY: 0,
-      transformOrigin: "top",
-      duration: 1.5,
-      ease: "power2.inOut",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 75%",
-      }
-    });
-  }, { scope: containerRef });
+  useGSAP(
+    () => {
+      // Line drawing animation
+      gsap.from(".line-spine", {
+        scaleY: 0,
+        transformOrigin: "top",
+        scrollTrigger: {
+          trigger: ".timeline-container",
+          start: "top 70%",
+          end: "bottom 80%",
+          scrub: 1,
+        },
+      });
+
+      // Staggered reveal for items
+      gsap.from(".timeline-item", {
+        opacity: 0,
+        x: -20,
+        stagger: 0.3,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".timeline-container",
+          start: "top 70%",
+        },
+      });
+    },
+    { scope: containerRef },
+  );
 
   return (
-    <section id="curriculum" className="relative w-full bg-white py-32 transition-colors duration-300 dark:bg-black" ref={containerRef}>
+    <section
+      ref={containerRef}
+      className="w-full bg-white py-32 transition-colors duration-500 dark:bg-[#030712]"
+    >
       <div className="mx-auto max-w-[1280px] px-6">
-        
-        {/* Header */}
-        <div className="flex flex-col items-center text-center">
-          <div className="mb-6 flex w-fit items-center gap-2 rounded-full border border-neutral-200 bg-neutral-100/50 px-4 py-2 backdrop-blur-sm dark:border-white/10 dark:bg-neutral-900/50 shadow-[0_0_15px_rgba(36,102,242,0.1)]">
-            <div className="h-2 w-2 rounded-full bg-primary-500 animate-pulse" />
-            <span className="text-[13px] font-medium text-neutral-600 dark:text-neutral-400">
+        {/* --- Header --- */}
+        <div className="mb-24 flex flex-col items-center text-center">
+          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2 dark:border-white/10 dark:bg-[#0A0F1C]">
+            <div className="h-1.5 w-1.5 rounded-full bg-primary-500 shadow-[0_0_8px_#2466F2]" />
+            <span className="text-[13px] font-medium text-neutral-500 dark:text-neutral-400">
               The Deep Work Blueprint
             </span>
           </div>
-          
-          <h2 className="max-w-2xl text-h3 font-medium leading-[1.2] tracking-tight text-neutral-900 md:text-h2 dark:text-white">
-            A self-paced, results-driven <br className="hidden md:block" /> course designed to help you
+          <h2 className="text-[32px] font-medium leading-tight text-neutral-900 dark:text-white md:text-[48px] lg:text-[56px]">
+            A self-paced, results-driven <br /> course designed to help you
           </h2>
         </div>
 
-        {/* Timeline */}
-        <div className="relative mx-auto mt-20 max-w-2xl px-4 md:px-0">
-          {/* Vertical Line */}
-          <div className="timeline-line absolute left-[27px] top-0 h-full w-[2px] bg-gradient-to-b from-primary-500/80 via-primary-500/40 to-transparent dark:from-primary-500/80 dark:via-primary-500/20 md:left-[39px]" />
-
-          <div className="flex flex-col gap-16">
-            {timelineData.map((item, index) => (
-              <div key={index} className="timeline-item flex items-center gap-8 md:gap-12 pl-6 md:pl-10 relative">
-                {/* Visual marker dot */}
-                <div className="absolute left-0 top-1/2 -mt-[6px] h-3 w-3 rounded-full bg-primary-500 shadow-[0_0_15px_rgba(36,102,242,0.8)] -ml-[1.5px]" />
-                
-                {/* Circular icon container */}
-                <div className="flex z-10 h-16 w-16 md:h-20 md:w-20 shrink-0 items-center justify-center rounded-full border border-neutral-200 bg-white/50 dark:border-white/10 dark:bg-neutral-900 backdrop-blur-md shadow-lg">
-                  {item.icon}
-                </div>
-                
-                {/* Text */}
-                <p className="text-body-normal text-neutral-600 dark:text-neutral-300 max-w-xs">
-                  {item.text}
-                </p>
+        {/* --- Timeline Container --- */}
+        <div
+          className="relative w-full dark:bg-[#030712] pb-20 "
+          ref={containerRef}
+        >
+          <div className="mx-auto max-w-[1280px] px-6">
+            {/* Timeline Container */}
+            <div className="relative mx-auto max-w-xl">
+              {/* ✅ THE VERTICAL LINE (Pinned exactly at 6px to match dot center) */}
+              <div className="absolute left-[6px] top-0 h-full w-[1.5px] z-0">
+                <div className="timeline-line-inner h-full w-full bg-gradient-to-b from-primary-500/0 via-primary-500 to-primary-500/0 opacity-50" />
+                {/* Soft Glow around the line */}
+                <div className="absolute inset-0 blur-[4px] bg-primary-500/30" />
               </div>
-            ))}
-          </div>
 
-          {/* Bottom badge */}
-          <div className="timeline-item mt-16 flex flex-col pl-[88px] md:pl-[120px] relative">
-             <div className="absolute left-0 top-6 -mt-[6px] h-3 w-3 rounded-full bg-primary-500 shadow-[0_0_15px_rgba(36,102,242,0.8)] -ml-[1.5px] border-2 border-black" />
+              <div className="flex flex-col gap-20">
+                {timelineData.map((item, index) => (
+                  <div
+                    key={index}
+                    className="timeline-item relative flex items-center gap-10"
+                  >
+                    {/* ✅ THE DOT (Positioned exactly on the line) */}
+                    <div className="relative z-10 h-3 w-3 rounded-full bg-[#2466F2] shadow-[0_0_15px_#2466F2] backdrop-blur-lg   " />
 
-             <div className="mb-4 flex w-fit items-center gap-2 rounded-full border border-neutral-200 bg-neutral-100/50 px-4 py-2 backdrop-blur-sm dark:border-white/10 dark:bg-neutral-900/50 shadow-[0_0_15px_rgba(36,102,242,0.05)]">
-                <div className="h-2 w-2 rounded-full bg-primary-500 animate-pulse" />
-                <span className="text-[13px] font-medium text-neutral-600 dark:text-neutral-400">
-                  Course Curriculum
-                </span>
-             </div>
-             <p className="text-h4 font-medium text-neutral-900 dark:text-white">
-               Mastering Deep Work: A <br /> Structured Path to Peak <br /> Productivity
-             </p>
+                    {/* Content Wrapper */}
+                    <div className="flex flex-col gap-6">
+                      {/* Icon with Blue Ambient Glow */}
+                      <div className="relative flex h-16 w-16 items-center justify-center rounded-full border border-white/10 bg-[#0A0F1C] shadow-2xl text-white dark:text-dark">
+                        {/* Inner Blue Glow */}
+                        <div className="absolute inset-0 rounded-full bg-primary-500/10 blur-[10px]" />
+                        <div className="relative z-10">{item.icon}</div>
+                      </div>
+
+                      {/* Text (100% Match font size and weight) */}
+                      <p className="text-[19px] font-normal leading-relaxed  dark:text-dark max-w-[280px]">
+                        {item.text}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
