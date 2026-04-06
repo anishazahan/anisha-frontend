@@ -37,7 +37,7 @@ const MovingBorderBadge = ({ text, className }: BadgeProps) => {
   return (
     <div
       ref={container}
-      className={`relative inline-flex items-center justify-center p-[1px] overflow-hidden rounded-full ${className}`}
+      className={`relative inline-flex items-center justify-center p-[1px] overflow-hidden rounded-xl ${className}`}
     >
       {/*  MOVING BORDER SVG */}
       <svg className="absolute inset-0 h-full w-full">
@@ -69,13 +69,14 @@ const MovingBorderBadge = ({ text, className }: BadgeProps) => {
         </defs>
       </svg>
 
-      <div className="relative flex items-center gap-3 rounded-full bg-[#0A0F1C] px-5 py-2 border border-white/5 shadow-[inset_0_0_12px_rgba(36,102,242,0.05)]">
+      <div className="relative flex items-center gap-3 rounded-xl bg-white dark:bg-[#0A0F1C] px-5 py-2 border border-white/5 shadow-[inset_0_0_12px_rgba(36,102,242,0.05)]">
+        <div className="absolute inset-0 rounded-xl border border-primary-300 dark:border-primary-300/50 [mask-image:linear-gradient(225deg,rgba(0,0,0,0.2)_0%,rgba(0,0,0,1)_50%,rgba(0,0,0,0.2)_100%)] pointer-events-none" />
         <div className="relative flex h-2.5 w-2.5 items-center justify-center">
           <div className="dot-glow absolute h-full w-full rounded-full bg-primary-500 blur-[2px] opacity-0" />
           <div className="relative h-2 w-2 rounded-full bg-primary-500 shadow-[0_0_8px_#2466F2]" />
         </div>
 
-        <span className="text-[15px] font-medium tracking-wide text-[#E2E8F0]">
+        <span className="text-[15px] tracking-wide dark:text-[#E2E8F0]">
           {text}
         </span>
       </div>

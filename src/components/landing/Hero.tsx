@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { default as texureImg } from "../../assets/texture.png";
+import texureImg from "../../assets/texture.png";
 import { Button } from "../ui/Button";
+import MovingBorderBadge from "../ui/MovingBorderBadge";
 import { PlayButton } from "../ui/PlayButton";
 
 export default function Hero() {
@@ -14,25 +15,20 @@ export default function Hero() {
       id="overview"
       className="relative w-full overflow-hidden bg-white pt-72 pb-32 transition-colors duration-300 dark:bg-black"
     >
-      {/* --- BACKGROUND LAYERS --- */}
-      {/* 1. Large Blue Radial Glow (Matches Figma) */}
+      {/* 1. Large Blue Radial Glow  */}
       <div className="absolute top-[-10%] left-1/2 z-0 hidden h-[600px] w-full -translate-x-1/2 opacity-30 dark:block  scale-[2]" />
 
       <div className="relative z-20 mx-auto max-w-[1280px] px-6 text-center">
-        {/* --- PROMO BADGE --- */}
-        <div className="mx-auto mb-8 flex w-fit items-center gap-2 rounded-full border border-neutral-200 bg-neutral-100/50 px-4 py-2 backdrop-blur-sm dark:border-white/10 dark:bg-neutral-900/50 shadow-[0_0_15px_rgba(36,102,242,0.1)]">
-          <div className="h-2 w-2 rounded-full bg-primary-500 animate-pulse" />
-          <span className="text-[13px] font-medium text-neutral-600 dark:text-neutral-400">
-            30% off until 4d : 2h : 41m : 17s
-          </span>
+        <div className=" flex justify-center mb-8">
+          <MovingBorderBadge text="30% off until 4d : 2h : 41m : 17s" />
         </div>
 
         {/* --- HEADINGS --- */}
-        <h1 className="mx-auto max-w-4xl text-h2 font-medium leading-[1.1] tracking-tight text-neutral-900 md:text-h1 dark:text-white">
+        <h1 className="mx-auto max-w-4xl text-h2 font-medium leading-[2] text-neutral-900 md:text-h1 dark:text-white">
           Master Focus & Get <br /> More Done in Less Time
         </h1>
 
-        <p className="mx-auto mt-6 max-w-2xl text-body-normal text-neutral-500 dark:text-neutral-400">
+        <p className="mx-auto mt-6 max-w-2xl font-normal text-body-normal text-neutral-500 dark:text-neutral-400">
           A step-by-step system to eliminate procrastination, train your{" "}
           <br className="hidden md:block" />
           brain for deep work, and boost productivity effortlessly.
@@ -42,15 +38,15 @@ export default function Hero() {
         <div className="mt-10 flex items-center justify-center gap-4">
           <Button
             variant="primary"
-            size="lg"
-            className="px-10 rounded-[12px] h-14"
+            size="md"
+            className=" text-white rounded-xl h-12"
           >
             Enroll now
           </Button>
           <Button
             variant="dark_light"
-            size="lg"
-            className="px-10 rounded-[12px] h-14 border border-neutral-200 dark:border-white/5"
+            size="md"
+            className=" rounded-xl h-12 border text-white border-neutral-200 dark:border-white/5"
           >
             Curriculum
           </Button>

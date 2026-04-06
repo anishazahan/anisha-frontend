@@ -141,7 +141,7 @@ const Curriculum = () => {
 
           {/* RIGHT */}
           <div className="h-fit rounded-[24px] bg-neutral-50 p-10 dark:bg-bg-surface_bg relative border border-white/5 overflow-hidden lg:ml-16">
-            <div className="absolute inset-0 rounded-[24px] border border-primary-300/40 [mask-image:linear-gradient(225deg,rgba(0,0,0,0.2)_0%,rgba(0,0,0,1)_50%,rgba(0,0,0,0.2)_100%)] pointer-events-none" />
+            <div className="absolute inset-0 rounded-[24px] border border-primary-300/50 [mask-image:linear-gradient(225deg,rgba(0,0,0,0.2)_0%,rgba(0,0,0,1)_50%,rgba(0,0,0,0.2)_100%)] pointer-events-none" />
             <h3 className="text-[24px] font-medium text-neutral-900 dark:text-white mb-8">
               Not only video lessons!
             </h3>
