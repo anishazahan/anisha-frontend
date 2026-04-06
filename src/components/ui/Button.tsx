@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import React from "react";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 font-normal",
+  "inline-flex items-center justify-center whitespace-nowrap focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 font-normal ",
   {
     variants: {
       variant: {
@@ -25,9 +25,9 @@ const buttonVariants = cva(
       },
 
       size: {
-        sm: "h-9 px-4 text-body-sm rounded-[8px]",
-        md: "h-11 px-6 text-body-normal rounded-[12px]",
-        lg: "h-14 px-8 text-h5 rounded-[16px]",
+        sm: "h-9 px-4 text-body-sm rounded-md",
+        md: "h-11 px-6 text-body-normal rounded-xl",
+        lg: "h-14 px-8 text-h5 rounded-2xl",
         pill: "h-11 px-8 rounded-full",
       },
     },

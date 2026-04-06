@@ -12,33 +12,45 @@ export function ThemeToggle() {
   React.useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 
+  const isLight = theme === "light";
+
   return (
-    <div className="flex flex-col gap-6 px-4 py-2  items-center justify-center  rounded-custom">
+    <div className="flex items-center justify-center">
       <div
-        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        className="relative flex h-[52px] w-[104px] cursor-pointer items-center rounded-full bg-neutral-900 p-1 transition-all duration-300"
+        onClick={() => setTheme(isLight ? "dark" : "light")}
+        className={cn(
+          "relative flex h-[52px] w-[104px] cursor-pointer items-center rounded-full p-1 transition-all duration-300",
+          isLight ? "bg-neutral-200" : "bg-neutral-900",
+        )}
       >
+        {/* Toggle Knob */}
         <div
           className={cn(
-            "absolute h-[44px] w-[44px] rounded-full bg-neutral-800 transition-all duration-300 ease-in-out",
-            theme === "light" ? "translate-x-[52px]" : "translate-x-0",
+            "absolute h-[44px] w-[44px] rounded-full shadow-md transition-all duration-300 ease-in-out",
+            isLight
+              ? "translate-x-[52px] bg-white"
+              : "translate-x-0 bg-neutral-800",
           )}
         />
 
         {/* Icons */}
-        <div className="z-10 flex w-full justify-around items-center text-white">
+        <div className="z-10 flex w-full items-center justify-around">
           <Moon
             size={20}
             className={cn(
-              "transition-opacity",
-              theme === "dark" ? "opacity-100" : "opacity-40",
+              "transition-all duration-300",
+              !isLight
+                ? "text-white opacity-100"
+                : "text-neutral-500 opacity-50",
             )}
           />
           <Sun
             size={20}
             className={cn(
-              "transition-opacity",
-              theme === "light" ? "opacity-100" : "opacity-40",
+              "transition-all duration-300",
+              isLight
+                ? "text-primary-500 opacity-100"
+                : "text-neutral-400 opacity-50",
             )}
           />
         </div>
