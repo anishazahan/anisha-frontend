@@ -23,7 +23,6 @@ export function ThemeToggle() {
           isLight ? "bg-neutral-200" : "bg-neutral-900",
         )}
       >
-        {/* Toggle Knob */}
         <div
           className={cn(
             "absolute h-[44px] w-[44px] rounded-full shadow-md transition-all duration-300 ease-in-out",

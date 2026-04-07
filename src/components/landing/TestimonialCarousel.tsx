@@ -267,7 +267,7 @@ export default function TestimonialCarousel() {
     <section
       id="testimonials"
       ref={container}
-      className="w-full bg-white dark:bg-[#030712] py-24 overflow-hidden transition-colors duration-300"
+      className="w-full bg-white dark:bg-black py-24 overflow-hidden transition-colors duration-300"
     >
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         {/* ── Header ── */}

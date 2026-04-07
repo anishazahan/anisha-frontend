@@ -66,7 +66,7 @@ html {
 }
 
 /* Hide the Next.js Speed Insights/Vitals bubble */
-/* #vercel-speed-insights-debug,
+#vercel-speed-insights-debug,
 [data-vercel-speed-insights-debug] {
   display: none !important;
 }
@@ -76,7 +76,7 @@ html {
 }
 #devtools-indicator {
   display: none !important;
-} */
+}
 
 @layer components {
   /* Play Button - Light Mode */

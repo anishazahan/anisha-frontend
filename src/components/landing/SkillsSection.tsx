@@ -130,7 +130,7 @@ const SkillsSection = () => {
               </div>
             </div>
 
-            {/* Mobile/Tablet Horizontal Row (lg hidden) */}
+            {/* Mobile Horizontal Row  */}
             <div className="flex tablet-sm:hidden sm:hidden grid-cols-3 gap-3 mt-10">
               {cardImages.map((src, i) => (
                 <div

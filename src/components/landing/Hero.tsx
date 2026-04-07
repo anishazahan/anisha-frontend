@@ -15,9 +15,7 @@ export default function Hero() {
       id="overview"
       className="relative w-full overflow-hidden bg-white pt-44 md:pt-56 lg:pt-72 pb-0 transition-colors duration-300 dark:bg-black"
     >
-      {/* ── 2. Blue radial glow — top center ── */}
-
-      {/* ── 4. Main content ── */}
+      {/* ── Main content ── */}
       <div className="relative z-10 mx-auto   text-center">
         {/* Badge */}
         <div className="flex justify-center mb-8 px-6">
@@ -29,7 +27,6 @@ export default function Hero() {
           Master Focus & Get <br /> More Done in Less Time
         </h1>
 
-        {/* Sub-copy */}
         <p className="mx-auto mt-6 px-6 max-w-2xl font-normal text-body-normal text-neutral-500 dark:text-neutral-400">
           A step-by-step system to eliminate procrastination, train your{" "}
           <br className="hidden md:block" />
@@ -54,7 +51,7 @@ export default function Hero() {
           </Button>
         </div>
 
-        {/* ── 5. Video Box ── */}
+        {/* ──Video Box ── */}
 
         <div className="relative mx-auto  w-full group mt-2 pt-10 md:pt-20 ">
           <div className="h-full w-full bg-glow-line-vertical absolute left-0 top-0 bottom-0"></div>
@@ -85,7 +82,7 @@ export default function Hero() {
               WebkitBackdropFilter: "blur(12px)",
             }}
           >
-            {/* ── 2. THE BLUE "TRACK" (Horizontal Scanlines) ── */}
+            {/* ──  (Horizontal Scanlines) ── */}
             {/* This creates the blue striped background seen behind the video in your image */}
             <div
               className="absolute left-0 right-0 top-1/2 z-1 h-[300px] -translate-y-1/2 opacity-20 dark:opacity-40"
@@ -143,7 +140,6 @@ export default function Hero() {
           </div>
           <div className="h-10 md:h-20 w-full bg-glow-line-horizontal"></div>
         </div>
-        {/* end video box */}
       </div>
     </section>
   );

@@ -11,7 +11,7 @@ import TestimonialCarousel from "@/components/landing/TestimonialCarousel";
 
 export default function Home() {
   return (
-    <div className="">
+    <>
       <Navbar />
       <Hero />
       <FocusSection />
@@ -21,8 +21,7 @@ export default function Home() {
       <TestimonialCarousel />
       <PricingSection />
       <CTASection />
-
       <Footer />
-    </div>
+    </>
   );
 }

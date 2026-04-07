@@ -2,7 +2,7 @@
 
 import { cn } from "@/utils/utils";
 import { cva, type VariantProps } from "class-variance-authority";
-import { Pause, Play } from "lucide-react"; // Switched to Lucide
+import { Pause, Play } from "lucide-react";
 import React from "react";
 
 const playButtonVariants = cva(
@@ -10,15 +10,16 @@ const playButtonVariants = cva(
   {
     variants: {
       variant: {
-        // Light Mode: Yellowish/Primary background with dark icon
-        primary: "bg-primary-500 text-neutral-900 border-neutral-900 dark:bg-primary-500 dark:text-neutral-900",
-        // Dark Mode: Black background with white icon and subtle border
+        primary:
+          "bg-primary-500 text-neutral-900 border-neutral-900 dark:bg-primary-500 dark:text-neutral-900",
+
         dark: "bg-neutral-950 text-white border-neutral-800 dark:bg-white dark:text-neutral-900",
-        white: "bg-white text-primary-500 border-none shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:scale-110 dark:shadow-[0_0_30px_rgba(36,102,242,0.3)]",
+        white:
+          "bg-white text-primary-500 border-none shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:scale-110 dark:shadow-[0_0_30px_rgba(36,102,242,0.3)]",
       },
       size: {
         sm: "h-10 w-10 rounded-full",
-        md: "h-16 w-16 rounded-full", // Matches your 64px Figma design
+        md: "h-16 w-16 rounded-full",
         lg: "h-24 w-24 rounded-full",
       },
     },
@@ -38,7 +39,6 @@ interface PlayButtonProps
 
 const PlayButton = React.forwardRef<HTMLButtonElement, PlayButtonProps>(
   ({ className, variant, size, isPaused = false, ...props }, ref) => {
-    // Lucide Icon sizing logic
     const iconSize = {
       sm: 18,
       md: 28,
@@ -52,16 +52,12 @@ const PlayButton = React.forwardRef<HTMLButtonElement, PlayButtonProps>(
         {...props}
       >
         {isPaused ? (
-          <Pause
-            size={iconSize}
-            fill="currentColor" // This makes the icon solid like your design
-            className="text-current"
-          />
+          <Pause size={iconSize} fill="currentColor" className="text-current" />
         ) : (
           <Play
             size={iconSize}
-            fill="currentColor" // Fills the triangle
-            className="translate-x-[2px] text-current" // Visual centering for the triangle
+            fill="currentColor"
+            className="translate-x-[2px] text-current"
           />
         )}
       </button>

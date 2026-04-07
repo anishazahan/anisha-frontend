@@ -149,7 +149,7 @@ export default function Navbar() {
             className="h-[28px] w-auto dark:block hidden"
           />
 
-          <p className="text-body-sm  text-4xl  text-primary-500 dark:text-white dark:hidden">
+          <p className="  text-3xl  text-neutral-900 dark:text-white dark:hidden">
             PPA
           </p>
         </Link>
