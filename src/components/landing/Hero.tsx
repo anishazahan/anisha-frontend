@@ -25,7 +25,7 @@ export default function Hero() {
         </div>
 
         {/* Heading */}
-        <h1 className="mx-auto px-6 max-w-4xl text-h2 font-medium leading-[1.2] text-neutral-900 md:text-h1 dark:text-white">
+        <h1 className="mx-auto px-6 max-w-4xl text-h2 font-medium leading-[1.2] text-neutral-900 md:text-h1 dark:text-white tracking-tight">
           Master Focus & Get <br /> More Done in Less Time
         </h1>
 

@@ -90,9 +90,14 @@ const PricingSection = () => {
                   <span className="text-[52px] font-medium tracking-tight text-neutral-900 dark:text-white md:text-[60px]">
                     $349
                   </span>
-                  <span className="text-[28px] text-neutral-400 line-through decoration-[#FF1818] decoration-[3px]">
+                  <p className="relative text-[24px] md:text-[28px] text-neutral-400 font-medium whitespace-nowrap">
                     $500
-                  </span>
+                    {/* Custom Strike-through Line */}
+                    <span
+                      className="absolute left-[-2%] top-[45%] h-[2px] w-[104%] bg-[#FF1818] rotate-[12deg] rounded-full"
+                      style={{ transformOrigin: "center" }}
+                    />
+                  </p>
                 </div>
                 <div className="rounded-lg bg-primary-500 px-5 py-1.5 text-sm font-medium tracking-wider text-white">
                   30% off
