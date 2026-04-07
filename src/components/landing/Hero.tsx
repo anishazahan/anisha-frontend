@@ -112,8 +112,8 @@ export default function Hero() {
                 <iframe
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-                  title="YouTube video player"
+                  src="https://www.youtube.com/embed/IZMbqcn2wR8"
+                  title="Cute Rabbit Videos"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -129,9 +129,6 @@ export default function Hero() {
                     className="object-cover opacity-80 transition-opacity group-hover:opacity-95"
                   />
 
-                  {/* Dark vignette over thumbnail */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
-
                   {/* Play Button */}
                   <div className="absolute inset-0 flex items-center justify-center z-30">
                     <PlayButton
@@ -140,15 +137,6 @@ export default function Hero() {
                       className="group-hover:scale-110 shadow-xl transition-transform duration-300"
                     />
                   </div>
-
-                  {/* CRT scanline effect on video thumbnail */}
-                  <div
-                    className="absolute inset-0 pointer-events-none z-20 dark:opacity-100 opacity-0"
-                    style={{
-                      backgroundImage:
-                        "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.18) 2px, rgba(0,0,0,0.18) 4px)",
-                    }}
-                  />
                 </>
               )}
             </div>
