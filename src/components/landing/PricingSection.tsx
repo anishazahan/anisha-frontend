@@ -51,7 +51,7 @@ const PricingSection = () => {
 
               <MovingBorderBadge className="mt-10 mb-4" text="Introducing" />
 
-              <SectionHeading title={"The Deep Work\nBlueprint"} />
+              <SectionHeading title={"The Deep Work\n Blueprint"} />
 
               <p className="mt-8 text-[17px]  text-neutral-500 dark:text-text-sub_heading">
                 What extra you will get if you enroll now

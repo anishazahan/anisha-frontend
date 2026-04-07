@@ -18,19 +18,19 @@ export default function Hero() {
       {/* ── 2. Blue radial glow — top center ── */}
 
       {/* ── 4. Main content ── */}
-      <div className="relative z-10 mx-auto  px-6 text-center">
+      <div className="relative z-10 mx-auto   text-center">
         {/* Badge */}
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-8 px-6">
           <MovingBorderBadge text="30% off until 4d : 2h : 41m : 17s" />
         </div>
 
         {/* Heading */}
-        <h1 className="mx-auto max-w-4xl text-h2 font-medium leading-[1.2] text-neutral-900 md:text-h1 dark:text-white">
+        <h1 className="mx-auto px-6 max-w-4xl text-h2 font-medium leading-[1.2] text-neutral-900 md:text-h1 dark:text-white">
           Master Focus & Get <br /> More Done in Less Time
         </h1>
 
         {/* Sub-copy */}
-        <p className="mx-auto mt-6 max-w-2xl font-normal text-body-normal text-neutral-500 dark:text-neutral-400">
+        <p className="mx-auto mt-6 px-6 max-w-2xl font-normal text-body-normal text-neutral-500 dark:text-neutral-400">
           A step-by-step system to eliminate procrastination, train your{" "}
           <br className="hidden md:block" />
           brain for deep work, and boost productivity effortlessly.
