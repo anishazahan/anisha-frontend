@@ -14,7 +14,7 @@ export function Footer() {
   const [year, setYear] = useState(new Date().getFullYear());
   return (
     // bg-[#030712]
-    <footer className="relative w-full dark:bg-bg-surface_bg pt-16 pb-10">
+    <footer className="relative w-full bg-neutral-100 dark:bg-bg-surface_bg pt-16 pb-10">
       <div className="absolute top-0 left-0 h-[1px] w-full bg-glow-line-horizontal opacity-40" />
 
       <div className="mx-auto max-w-[1280px] px-6 lg:px-8">

@@ -18,7 +18,7 @@ const CTASection = () => {
   };
 
   return (
-    <section className="w-full bg-bg-surface_bg py-24 transition-colors duration-300">
+    <section className="w-full bg-neutral-100 dark:bg-bg-surface_bg py-24 transition-colors duration-300">
       <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-12 px-6 md:flex-row lg:px-8">
         {/* Left Side */}
         <div className="text-center md:text-left">
@@ -27,7 +27,7 @@ const CTASection = () => {
             title={"The Deep Work\n Blueprint"}
           />
 
-          <p className="mt-6 text-body-normal text-text-sub_heading max-w-[250px] mx-auto md:mx-0 md:max-w-full">
+          <p className="mt-6 text-body-normal text-neutral-800 dark:text-text-sub_heading max-w-[250px] mx-auto md:mx-0 md:max-w-full">
             Master Focus & Get More Done in Less Time
           </p>
         </div>
