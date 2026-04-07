@@ -4,27 +4,56 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import img1 from "../../assets/focus-1.jpg";
+import img2 from "../../assets/focus-2.jpg";
+import img3 from "../../assets/focus-3.jpg";
 import MovingBorderBadge from "../ui/MovingBorderBadge";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+const images = [img1, img2, img3];
+
 export default function FocusSection() {
   const container = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLHeadingElement>(null);
 
+  // ✅ Track theme changes (important)
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const checkTheme = () => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    };
+
+    checkTheme();
+
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   useGSAP(
     () => {
-      // 1. Text Highlighting Effect
-      // Animates the text from neutral-700 to white as you scroll
+      // ✅ Kill previous animations (important on theme change)
+      gsap.killTweensOf(".highlight-text span");
+
+      // ✅ TEXT ANIMATION (theme-aware)
       gsap.fromTo(
         ".highlight-text span",
-        { color: "rgba(163, 163, 163, 0.2)" }, // neutral-400 with low opacity
         {
-          color: "white",
-          stagger: 0.1,
+          color: isDark ? "rgba(163,163,163,0.2)" : "rgba(115,115,115,0.3)",
+        },
+        {
+          color: isDark ? "#ffffff" : "#111827",
+          stagger: 0.08,
+          ease: "none",
           scrollTrigger: {
             trigger: textRef.current,
             start: "top 80%",
@@ -34,7 +63,6 @@ export default function FocusSection() {
         },
       );
 
-      // 2. Image Card Floating Animation
       gsap.from(".image-card", {
         y: 60,
         opacity: 0,
@@ -47,48 +75,44 @@ export default function FocusSection() {
         },
       });
     },
-    { scope: container },
+    { scope: container, dependencies: [isDark] },
   );
 
   return (
     <section
       ref={container}
-      className="w-full bg-[#030712] py-24 transition-colors duration-300"
+      className="w-full bg-white dark:bg-[#030712] pt-20 lg:pt-44 pb-24 transition-colors duration-300"
     >
       <div className="mx-auto max-w-[1280px] px-6 text-center lg:px-8">
-        {/* Badge Header */}
-        <div className="mb-12 flex justify-center">
+        <div className="mb-8 flex justify-center">
           <MovingBorderBadge text="Are Distractions Holding You Back?" />
         </div>
 
-        {/* Highlighting Text Content */}
         <h2
           ref={textRef}
-          className="highlight-text mx-auto max-w-5xl text-[32px] font-medium leading-tight tracking-tight md:text-[56px] lg:text-[64px]"
+          className="highlight-text text-neutral-900 dark:text-white mx-auto max-w-5xl font-medium tracking-tight text-2xl sm:text-4xl lg:text-5xl px-4 lg:px-6 leading-relaxed"
         >
           {"If you struggle to focus, feel overwhelmed by endless tasks, or procrastinate instead of making progress, you're not alone."
             .split(" ")
             .map((word, i) => (
-              <span key={i} className="inline-block mr-[0.25em]">
+              <span key={i} className="inline-block mr-[0.25em] align-baseline">
                 {word}
               </span>
             ))}
         </h2>
 
-        {/* Image Grid */}
-        <div className="image-grid mt-20 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {[1, 2, 3].map((num) => (
+        <div className="image-grid mt-10 grid grid-cols-3 gap-2 max-w-[400px] mx-auto">
+          {images.map((img, index) => (
             <div
-              key={num}
-              className="image-card group relative aspect-[4/5] overflow-hidden rounded-[32px] border border-white/5 bg-neutral-900 shadow-2xl"
+              key={index}
+              className="image-card group relative aspect-square overflow-hidden rounded-xl border border-white/5 bg-neutral-900 shadow-2xl"
             >
               <Image
-                src={`/assets/problem-${num}.png`} // Match your asset names
-                alt="Stressed professional"
+                src={img}
+                alt="Focus"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              {/* Subtle inner shadow for depth */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>
           ))}

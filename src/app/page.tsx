@@ -14,8 +14,8 @@ export default function Home() {
     <div className="">
       <Navbar />
       <Hero />
-      <SelfPacedSection />
       <FocusSection />
+      <SelfPacedSection />
       <SkillsSection />
       <Curriculum />
       <TestimonialCarousel />
