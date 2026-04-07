@@ -6,7 +6,7 @@ A premium, conversion-focused landing page built with **Next.js 15**, **GSAP**, 
 
 ### 🎨 Advanced Theme Engine
 
-- **True Dark/Light Mode**: Seamlessly transitions between a high-contrast "OLED" Dark Mode (`#030712`) and a clean, professional Light Mode.
+- **True Dark/Light Mode**: Seamlessly transitions between a high-contrast "OLED" Dark Mode and a clean, professional Light Mode.
 - **Hydration-Safe Architecture**: Implements a custom `ThemeProvider` wrapper to prevent flickering and "script tag" hydration errors during initial client-side rendering.
 - **Theme-Aware Components**: UI elements like the Pricing Cards, Testimonials, and Dividers dynamically update their borders, shadows, and background gradients based on the active theme.
 
@@ -50,7 +50,7 @@ The project uses a specialized breakpoint system to ensure the UI scales perfect
 1.  **Clone the repository:**
 
     ```bash
-    git clone [https://github.com/your-username/deep-work-blueprint.git](https://github.com/your-username/deep-work-blueprint.git)
+    git clone [https://github.com/anishazahan/anisha-frontend.git](https://github.com/anishazahan/anisha-frontend.git)
     ```
 
 2.  **Install dependencies:**
