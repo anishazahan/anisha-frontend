@@ -20,7 +20,6 @@ export default function FocusSection() {
   const container = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLHeadingElement>(null);
 
-  // ✅ Track theme changes (important)
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -41,19 +40,16 @@ export default function FocusSection() {
 
   useGSAP(
     () => {
-      // ✅ Kill previous animations (important on theme change)
       gsap.killTweensOf(".highlight-text span");
 
-      // ✅ TEXT ANIMATION (theme-aware)
       gsap.fromTo(
         ".highlight-text span",
         {
-          color: isDark ? "rgba(163,163,163,0.2)" : "rgba(115,115,115,0.3)",
+          color: isDark ? "rgba(163, 163, 163, 0.2)" : "rgba(0, 0, 0, 0.15)",
         },
         {
-          color: isDark ? "#ffffff" : "#111827",
-          stagger: 0.08,
-          ease: "none",
+          color: isDark ? "white" : "#111827",
+          stagger: 0.1,
           scrollTrigger: {
             trigger: textRef.current,
             start: "top 80%",
@@ -63,17 +59,14 @@ export default function FocusSection() {
         },
       );
 
-      gsap.from(".image-card", {
-        y: 60,
-        opacity: 0,
-        stagger: 0.2,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".image-grid",
-          start: "top 85%",
-        },
-      });
+      // gsap.from(".image-card", {
+      //   y: 60,
+      //   opacity: 0,
+      //   stagger: 0.2,
+      //   duration: 1,
+      //   ease: "power3.out",
+      //   scrollTrigger: { trigger: ".image-grid", start: "top 85%" },
+      // });
     },
     { scope: container, dependencies: [isDark] },
   );
@@ -81,7 +74,7 @@ export default function FocusSection() {
   return (
     <section
       ref={container}
-      className="w-full bg-white dark:bg-black pt-20 lg:pt-44 pb-24 transition-colors duration-300"
+      className="w-full bg-white dark:bg-black pt-20 lg:pt-44 pb-24 transition-colors duration-500"
     >
       <div className="mx-auto max-w-[1280px] px-6 text-center lg:px-8">
         <div className="mb-8 flex justify-center">
@@ -90,7 +83,7 @@ export default function FocusSection() {
 
         <h2
           ref={textRef}
-          className="highlight-text text-neutral-900 dark:text-white mx-auto max-w-5xl font-medium tracking-tight text-2xl sm:text-4xl lg:text-5xl px-4 lg:px-6 leading-relaxed"
+          className="highlight-text mx-auto max-w-5xl font-medium tracking-tight text-2xl sm:text-4xl lg:text-5xl px-4 lg:px-6 leading-relaxed text-neutral-900 dark:text-white"
         >
           {"If you struggle to focus, feel overwhelmed by endless tasks, or procrastinate instead of making progress, you're not alone."
             .split(" ")
@@ -101,15 +94,15 @@ export default function FocusSection() {
             ))}
         </h2>
 
-        <div className="image-grid mt-10 grid grid-cols-3 gap-2 max-w-[400px] mx-auto">
-          {images.map((img, index) => (
+        <div className="image-grid mt-8 grid gap-2 grid-cols-3 max-w-[400px] mx-auto">
+          {images?.map((img, index) => (
             <div
               key={index}
-              className="image-card group relative aspect-square overflow-hidden rounded-xl border border-white/5 bg-neutral-900 shadow-2xl"
+              className="image-card group relative aspect-[6/6] overflow-hidden rounded-xl bg-neutral-900 shadow-2xl"
             >
               <Image
                 src={img}
-                alt="Focus"
+                alt="Focus visual"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />

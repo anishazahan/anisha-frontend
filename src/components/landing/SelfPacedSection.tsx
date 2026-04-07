@@ -5,6 +5,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BadgeCheck, Brain, Lightbulb, Waypoints } from "lucide-react";
 import { useRef } from "react";
+import MovingBorderBadge from "../ui/MovingBorderBadge";
+import SectionHeading from "../ui/SectionHeading";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,7 +34,6 @@ export default function SelfPacedSection() {
 
   useGSAP(
     () => {
-      // Line drawing animation
       gsap.from(".line-spine", {
         scaleY: 0,
         transformOrigin: "top",
@@ -44,7 +45,6 @@ export default function SelfPacedSection() {
         },
       });
 
-      // Staggered reveal for items
       gsap.from(".timeline-item", {
         opacity: 0,
         x: -20,
@@ -66,31 +66,24 @@ export default function SelfPacedSection() {
       className="w-full bg-white py-32 transition-colors duration-500 dark:bg-black"
     >
       <div className="mx-auto max-w-[1280px] px-6">
-        {/* --- Header --- */}
         <div className="mb-24 flex flex-col items-center text-center">
-          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2 dark:border-white/10 dark:bg-[#0A0F1C]">
-            <div className="h-1.5 w-1.5 rounded-full bg-primary-500 shadow-[0_0_8px_#2466F2]" />
-            <span className="text-[13px] font-medium text-neutral-500 dark:text-neutral-400">
-              The Deep Work Blueprint
-            </span>
+          <div className="mb-8 flex justify-center">
+            <MovingBorderBadge text="   The Deep Work Blueprint" />
           </div>
-          <h2 className="text-[32px] font-medium leading-tight text-neutral-900 dark:text-white md:text-[48px] lg:text-[56px]">
-            A self-paced, results-driven <br /> course designed to help you
-          </h2>
+
+          <SectionHeading
+            title={"A self-paced, results-driven\ncourse designed to help you"}
+          />
         </div>
 
-        {/* --- Timeline Container --- */}
         <div
-          className="relative w-full dark:bg-[#030712] pb-20 "
+          className="relative w-full dark:bg-black pb-20 "
           ref={containerRef}
         >
           <div className="mx-auto max-w-[1280px] px-6">
-            {/* Timeline Container */}
             <div className="relative mx-auto max-w-xl">
-              {/* ✅ THE VERTICAL LINE (Pinned exactly at 6px to match dot center) */}
-              <div className="absolute left-[6px] top-0 h-full w-[1.5px] z-0">
+              <div className="absolute left-[10px] top-0 h-full w-[1.5px] z-0">
                 <div className="timeline-line-inner h-full w-full bg-gradient-to-b from-primary-500/0 via-primary-500 to-primary-500/0 opacity-50" />
-                {/* Soft Glow around the line */}
                 <div className="absolute inset-0 blur-[4px] bg-primary-500/30" />
               </div>
 
@@ -100,20 +93,20 @@ export default function SelfPacedSection() {
                     key={index}
                     className="timeline-item relative flex items-center gap-10"
                   >
-                    {/* ✅ THE DOT (Positioned exactly on the line) */}
-                    <div className="relative z-10 h-3 w-3 rounded-full bg-[#2466F2] shadow-[0_0_15px_#2466F2] backdrop-blur-lg   " />
+                    {/* primary DOT  */}
+                    <div className="relative z-10 h-5 w-5 rounded-full bg-[#2466F2] shadow-[0_0_15px_#2466F2] backdrop-blur-lg   " />
 
                     {/* Content Wrapper */}
                     <div className="flex flex-col gap-6">
                       {/* Icon with Blue Ambient Glow */}
-                      <div className="relative flex h-16 w-16 items-center justify-center rounded-full border border-white/10 bg-[#0A0F1C] shadow-2xl text-white dark:text-dark">
+                      <div className="relative flex h-16 w-16 items-center justify-center rounded-full  bg-neutral-200 dark:bg-bg-surface_bg shadow-2xl text-neutral-800 dark:text-white dark:text-dark">
                         {/* Inner Blue Glow */}
+                        <div className="absolute inset-0 rounded-full border border-primary-400 dark:border-primary-300/50 [mask-image:linear-gradient(225deg,rgba(0,0,0,0.2)_0%,rgba(0,0,0,1)_50%,rgba(0,0,0,0.2)_100%)] pointer-events-none" />
                         <div className="absolute inset-0 rounded-full bg-primary-500/10 blur-[10px]" />
                         <div className="relative z-10">{item.icon}</div>
                       </div>
 
-                      {/* Text (100% Match font size and weight) */}
-                      <p className="text-[19px] font-normal leading-relaxed  dark:text-dark max-w-[280px]">
+                      <p className="text-[17px] font-normal leading-relaxed  dark:text-dark max-w-[280px]">
                         {item.text}
                       </p>
                     </div>
