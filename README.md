@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Deep Work Blueprint – High-Performance Landing Page
 
-## Getting Started
+A premium, conversion-focused landing page built with **Next.js 15**, **GSAP**, and **Tailwind CSS**. This project is engineered for high-end displays (optimized for MacBook M4 Retina) with a focus on fluid animations, modular architecture, and a flawless multi-theme experience.
 
-First, run the development server:
+## ✨ Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 🎨 Advanced Theme Engine
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **True Dark/Light Mode**: Seamlessly transitions between a high-contrast "OLED" Dark Mode (`#030712`) and a clean, professional Light Mode.
+- **Hydration-Safe Architecture**: Implements a custom `ThemeProvider` wrapper to prevent flickering and "script tag" hydration errors during initial client-side rendering.
+- **Theme-Aware Components**: UI elements like the Pricing Cards, Testimonials, and Dividers dynamically update their borders, shadows, and background gradients based on the active theme.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🎭 High-End GSAP Animations
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Scroll-Triggered Reveals**: Page sections utilize staggered timelines to slide and fade into view as the user scrolls.
+- **Smooth Accordion System**: The Curriculum section features an accordion with `expo.out` easing for buttery-smooth height transitions.
+- **Dynamic Reveal Text**: A sophisticated "Highlight Text" component that changes color word-by-word based on scroll progress.
+- **Interactive Hover States**: Features magnetic buttons, glowing badges, and scale-transformations on image cards for a tactile feel.
 
-## Learn More
+### 📱 Precision Responsive Design
 
-To learn more about Next.js, take a look at the following resources:
+The project uses a specialized breakpoint system to ensure the UI scales perfectly from mobile devices to ultra-wide monitors:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Mobile** (`412px - 520px`): Includes a 1.5-slide peek for carousels to encourage swiping.
+- **Tablet-SM** (`521px - 680px`): Optimized for dual-column layouts.
+- **Tablet-LG** (`681px - 980px`): Triple-column and expanded grid views.
+- **Desktop** (`981px+`): High-impact 4+ item grid layouts.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 💎 Pixel-Perfect UI Elements
 
-## Deploy on Vercel
+- **Rising Strike-through**: A custom-angled red price mark (`#FF1818`) that mimics hand-drawn designs by rising slightly above the text baseline.
+- **Glowing Timeline**: A vertical timeline with a soft blue "bloom" and solid glow dots without hard outlines.
+- **Section Headings**: Dynamic heading components with precise Figma-matched typography (Weight 500, Line-height 115%).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Styling**: Tailwind CSS
+- **Animation**: GSAP (GreenSock Animation Platform)
+- **Carousel**: Swiper.js
+- **Icons**: Lucide React
+- **Typography**: Inter (Variable)
+
+---
+
+## 🚀 Getting Started
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone [https://github.com/your-username/deep-work-blueprint.git](https://github.com/your-username/deep-work-blueprint.git)
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    yarn
+    ```
+
+3.  **Run the development server:**
+
+    ```bash
+    yarn dev
+    ```
+
+4.  **Open in your browser:**
+    Navigate to `http://localhost:3000`.
+
+---
+
+## 📄 License
+
+© Copyright 2026, All Rights Reserved By Anisha Zahan.
+Built with precision for peak productivity.
