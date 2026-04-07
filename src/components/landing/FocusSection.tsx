@@ -81,7 +81,7 @@ export default function FocusSection() {
   return (
     <section
       ref={container}
-      className="w-full bg-white dark:bg-[#030712] pt-20 lg:pt-44 pb-24 transition-colors duration-300"
+      className="w-full bg-white dark:bg-black pt-20 lg:pt-44 pb-24 transition-colors duration-300"
     >
       <div className="mx-auto max-w-[1280px] px-6 text-center lg:px-8">
         <div className="mb-8 flex justify-center">

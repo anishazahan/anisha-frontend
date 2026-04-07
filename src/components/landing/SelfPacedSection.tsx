@@ -63,7 +63,7 @@ export default function SelfPacedSection() {
   return (
     <section
       ref={containerRef}
-      className="w-full bg-white py-32 transition-colors duration-500 dark:bg-[#030712]"
+      className="w-full bg-white py-32 transition-colors duration-500 dark:bg-black"
     >
       <div className="mx-auto max-w-[1280px] px-6">
         {/* --- Header --- */}

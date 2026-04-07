@@ -15,8 +15,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <FocusSection />
-      <SelfPacedSection />
       <SkillsSection />
+      <SelfPacedSection />
       <Curriculum />
       <TestimonialCarousel />
       <PricingSection />
